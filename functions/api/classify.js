@@ -38,7 +38,8 @@ export async function onRequestPost(context) {
     });
 
     if (!upstream.ok) {
-      return Response.json({ error: 'Gemini API 오류' }, { status: 502 });
+      const detail = await upstream.text().catch(() => '');
+      return Response.json({ error: `Gemini API 오류 [${upstream.status}]: ${detail}` }, { status: 502 });
     }
 
     const data = await upstream.json();
