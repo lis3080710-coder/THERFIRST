@@ -50,10 +50,13 @@ cosmeticsForm.addEventListener('submit', async (e) => {
       body: JSON.stringify({ query }),
     });
 
-    if (!res.ok) throw new Error('API 오류');
+    if (!res.ok) {
+      const errBody = await res.text().catch(() => '');
+      throw new Error(`[${res.status}] ${errBody || 'API 오류'}`);
+    }
 
     const data = await res.json();
-    const answer = data.candidates[0].content.parts[0].text;
+    const answer = data.candidates?.[0]?.content?.parts?.[0]?.text;
     const seasons = detectSeasons(answer);
     const style = pickPrimaryStyle(seasons);
 
@@ -71,11 +74,11 @@ cosmeticsForm.addEventListener('submit', async (e) => {
       ${tagsHtml}
       <div class="result-content">${formatText(escapeHtml(answer))}</div>`;
     cosmeticsResult.classList.remove('hidden');
-  } catch {
+  } catch (err) {
     cosmeticsResult.style.background  = '#fef2f2';
     cosmeticsResult.style.borderColor = '#fca5a5';
     cosmeticsResult.style.color       = '#991b1b';
-    cosmeticsResult.innerHTML = '<p>분석 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.</p>';
+    cosmeticsResult.innerHTML = `<p>오류: ${escapeHtml(err.message)}</p>`;
     cosmeticsResult.classList.remove('hidden');
   } finally {
     searchBtn.disabled = false;
