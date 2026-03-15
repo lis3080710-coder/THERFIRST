@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "thefirst",
     "public": ".",
     "ignore": [
       "firebase.json",
