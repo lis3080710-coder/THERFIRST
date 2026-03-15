@@ -2,7 +2,10 @@
 .firebase/
 firebase-debug.log
 
-# Functions 환경변수 (API 키 포함 — 절대 커밋 금지)
-functions/.env
-functions/.env.local
-functions/node_modules/
+# Firebase Functions (API 키 포함 — 절대 커밋 금지)
+_firebase/.env
+_firebase/.env.local
+_firebase/node_modules/
+
+# Cloudflare Pages Functions 로컬 환경변수
+functions/.dev.vars
