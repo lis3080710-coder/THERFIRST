@@ -1,7 +1,16 @@
 {
+  "functions": {
+    "source": "functions"
+  },
   "hosting": {
     "site": "thefirst",
     "public": ".",
+    "rewrites": [
+      {
+        "source": "/api/classify",
+        "function": "classifyCosmetics"
+      }
+    ],
     "ignore": [
       "firebase.json",
       ".firebaserc",
@@ -9,7 +18,8 @@
       ".idx/**",
       ".vscode/**",
       ".claude/**",
-      "firebase-debug.log"
+      "firebase-debug.log",
+      "functions/**"
     ]
   }
 }

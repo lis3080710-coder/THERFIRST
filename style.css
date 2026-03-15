@@ -10,9 +10,11 @@ body {
   color: #333;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2rem 1rem;
+  gap: 1.5rem;
 }
 
 .container {
@@ -118,3 +120,108 @@ textarea {
   padding-top: 2rem;
   border-top: 1.5px solid #eee;
 }
+
+/* 화장품 계절 분류 */
+.cosmetics-container {
+  max-width: 560px;
+}
+
+.cosmetics-container h1 {
+  font-size: 1.75rem;
+}
+
+.search-group {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.search-group input {
+  flex: 1;
+}
+
+.search-btn {
+  padding: 0.65rem 1.1rem;
+  background: #059669;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background: #047857;
+}
+
+.search-btn:disabled {
+  background: #6ee7b7;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-top-color: #059669;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.result-card {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.result-header {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.result-content {
+  white-space: pre-line;
+}
+
+.season-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.season-tag {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.season-tag.spring  { background: #fce7f3; color: #9d174d; }
+.season-tag.summer  { background: #dbeafe; color: #1e40af; }
+.season-tag.autumn  { background: #ffedd5; color: #9a3412; }
+.season-tag.winter  { background: #e0f2fe; color: #075985; }

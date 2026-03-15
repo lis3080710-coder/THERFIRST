@@ -1,0 +1,8 @@
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Functions 환경변수 (API 키 포함 — 절대 커밋 금지)
+functions/.env
+functions/.env.local
+functions/node_modules/
