@@ -86,6 +86,48 @@ cosmeticsForm.addEventListener('submit', async (e) => {
   }
 });
 
+// ── 로또 번호 추출기 ───────────────────────────────────────────────
+const lottoBtn     = document.getElementById('lotto-btn');
+const lottoDisplay = document.getElementById('lotto-display');
+
+function getBallColorClass(num) {
+  if (num <= 10) return 'ball-1-10';
+  if (num <= 20) return 'ball-11-20';
+  if (num <= 30) return 'ball-21-30';
+  if (num <= 40) return 'ball-31-40';
+  return 'ball-41-45';
+}
+
+lottoBtn.addEventListener('click', () => {
+  const numbers = [];
+  while (numbers.length < 6) {
+    const num = Math.floor(Math.random() * 45) + 1;
+    if (!numbers.includes(num)) {
+      numbers.push(num);
+    }
+  }
+  numbers.sort((a, b) => a - b);
+
+  lottoDisplay.innerHTML = '';
+  numbers.forEach((num, index) => {
+    const ball = document.createElement('div');
+    ball.className = `lotto-ball ${getBallColorClass(num)}`;
+    ball.textContent = num;
+    ball.style.animation = `pop 0.3s ease-out ${index * 0.1}s both`;
+    lottoDisplay.appendChild(ball);
+  });
+});
+
+// 애니메이션을 위한 스타일 추가
+const styleSheet = document.createElement("style");
+styleSheet.innerText = `
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+`;
+document.head.appendChild(styleSheet);
+
 // ── 제휴 문의 폼 ────────────────────────────────────────────────────
 const form = document.getElementById('contact-form');
 const successMessage = document.getElementById('success-message');
