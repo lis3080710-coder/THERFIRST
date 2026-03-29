@@ -17,6 +17,95 @@ body {
   gap: 1.5rem;
 }
 
+/* 홈 화면 전용 */
+.home-body {
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.home-container {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.home-subtitle {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 3rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-card {
+  background: #fff;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #4f46e5;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.menu-card p {
+  font-size: 0.95rem;
+  color: #718096;
+  line-height: 1.5;
+}
+
+.nav-back {
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: -0.5rem;
+  text-align: left;
+}
+
+.nav-back a {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-back a:hover {
+  color: #3730a3;
+}
+
+/* 기존 컨테이너 */
 .container {
   background: #fff;
   border-radius: 12px;

@@ -5,6 +5,7 @@
   "hosting": {
     "site": "thefirst",
     "public": ".",
+    "cleanUrls": true,
     "rewrites": [
       {
         "source": "/api/classify",
