@@ -3,27 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The First - 홈</title>
+  <title>Lunch Recommender - 점심 메뉴 추천</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
-<body class="home-body">
-  <div class="home-container">
-    <h1 class="home-title">The First Services</h1>
-    <p class="home-subtitle">원하시는 서비스를 선택해주세요.</p>
+<body>
+  <div class="container menu-recommender">
+    <h1>🍱 점심 메뉴 추천</h1>
+    <p class="subtitle">자주 먹는 메뉴를 입력하고 오늘 점심을 골라보세요!</p>
 
-    <div class="menu-grid">
-      <a href="/cosmetic" class="menu-card">
-        <div class="card-icon">🎨</div>
-        <h2>화장품 계절 분류 검색</h2>
-        <p>AI가 분석하는 나에게 딱 맞는 계절 화장품</p>
-      </a>
+    <div class="input-group">
+      <input type="text" id="menu-input" placeholder="예: 김치찌개, 돈가스, 마라탕..." autocomplete="off">
+      <button id="add-btn" class="add-btn">추가</button>
+    </div>
 
-      <a href="/lotto" class="menu-card">
-        <div class="card-icon">🍀</div>
-        <h2>로또 번호 추첨</h2>
-        <p>오늘의 행운을 잡으세요! 추천 번호 생성기</p>
-      </a>
+    <div id="menu-list" class="menu-list">
+      <!-- 메뉴 항목들이 여기에 추가됩니다 -->
+    </div>
+
+    <div class="action-group">
+      <button id="recommend-btn" class="recommend-btn" disabled>오늘의 메뉴는?</button>
+    </div>
+
+    <div id="result-overlay" class="result-overlay hidden">
+      <div class="result-card">
+        <h2>오늘의 점심!</h2>
+        <div id="result-menu" class="result-menu"></div>
+        <button id="close-btn" class="close-btn">다시 하기</button>
+      </div>
     </div>
   </div>
-</body>
+
+  <script defer type="text/javascript" src="/main.js"></script>
+1</body>
 </html>

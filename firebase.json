@@ -1,17 +1,8 @@
 {
-  "functions": {
-    "source": "_firebase"
-  },
   "hosting": {
     "site": "thefirst",
     "public": ".",
     "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "/api/classify",
-        "function": "classifyCosmetics"
-      }
-    ],
     "ignore": [
       "firebase.json",
       ".firebaserc",
