@@ -273,7 +273,7 @@ textarea {
 .lotto-btn {
   width: 100%;
   padding: 0.8rem;
-  background: #ef4444;
+  background: #10b981;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -284,7 +284,7 @@ textarea {
 }
 
 .lotto-btn:hover {
-  background: #dc2626;
+  background: #059669;
 }
 
 .lotto-btn:active {
